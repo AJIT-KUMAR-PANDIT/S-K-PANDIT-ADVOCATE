@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<div class="col-lg-6 bg-info" id="dv_rc" style="height:400px;" >
+Right Click here
+</div>
+$(document).ready(function () {
+$("#dv_rc").bind('contextmenu', function (e) {
+e.preventDefault(); // prevents default menu 
+});
+});
+<div id="popupRC" style="display:none;" 
+
+class="panel panel-primary  ">
+        <div class="panel-heading ">Right Click Window</div>
+        <div class="panel-body">
+          
+                <div class="form-group">
+                    <label class="control-label col-md-2">Color</label>
+
+                    <input type="color" 
+
+                    class="form-control" id="idcolorr" />
+                </div>
+          
+        </div>
+        <div class="panel-footer"><input type="button"  
+
+        class="btn btn-danger" value="close"  /></div>
+    </div>
+	$("#dv_rc").bind('contextmenu', function (e) {
+e.preventDefault(); // prevents native menu from being shown
+ $("#popupRC").css({ position: "absolute", top: e.pageY, 
+left: e.pageX, display: "block" });
+});
+<input type="button" class="btn btn-danger" 
+
+value="close" onClick="$('#popupRC').css({ display: 'none' });" />
+</html>
